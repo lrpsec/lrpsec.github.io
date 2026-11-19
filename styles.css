@@ -519,7 +519,6 @@ footer {
   }
 }
 
-
 /* Cyberpunk-style monochrome glitch. Disabled under prefers-reduced-motion. */
 .glitch {
   position: relative;
@@ -582,42 +581,37 @@ footer {
   100% { opacity: 0; transform: translate(0); clip-path: inset(55% 0 0 0); }
 }
 
-/* Automatic glitch: same 0.5-second sequence, once every 10 seconds. */
 @keyframes glitch-idle-jitter {
-  0%, 95% { transform: translate(0); clip-path: none; }
-  95.4% { transform: translate(-5px, 0); }
-  95.8% { opacity: 0; transform: translate(5px, 1px); }
-  96% { opacity: 1; transform: translate(5px, 1px); clip-path: inset(25% 0 40% 0); }
-  96.4% { transform: translate(-4px, 0); clip-path: inset(60% 0 5% 0); }
-  96.8% { transform: translate(4px, -1px); clip-path: none; }
-  97.2% { opacity: 0; }
-  97.4% { opacity: 1; transform: translate(-2px, 0); }
-  98% { transform: translate(3px, 0); clip-path: inset(10% 0 55% 0); }
-  98.6% { transform: translate(-1px, 0); clip-path: none; }
-  100% { transform: translate(0); clip-path: none; }
+  0%, 96% { transform: translate(0); clip-path: none; }
+  96.4% { transform: translate(-3px, 0); clip-path: inset(20% 0 50% 0); }
+  97% { transform: translate(3px, 1px); clip-path: inset(55% 0 8% 0); }
+  97.6% { transform: translate(-2px, 0); clip-path: none; }
+  98%, 100% { transform: translate(0); clip-path: none; }
 }
 
 @keyframes glitch-idle-slice-a {
-  0%, 95% { opacity: 0; transform: translate(0); }
-  95.4% { opacity: 1; transform: translate(-4px, 0); clip-path: inset(0 0 62% 0); }
-  95.9% { opacity: 1; transform: translate(6px, 0); clip-path: inset(8% 0 48% 0); }
-  96.6% { opacity: 1; transform: translate(-7px, -1px); clip-path: inset(0 0 72% 0); }
-  97.5% { opacity: 1; transform: translate(3px, 0); clip-path: inset(22% 0 28% 0); }
-  98.5% { opacity: 1; transform: translate(-3px, 0); clip-path: inset(0 0 58% 0); }
-  100% { opacity: 0; transform: translate(0); }
+  0%, 96% { opacity: 0; transform: translate(0); }
+  96.4% { opacity: 1; transform: translate(-5px, 0); clip-path: inset(0 0 60% 0); }
+  97.4% { opacity: 1; transform: translate(4px, 0); clip-path: inset(10% 0 45% 0); }
+  98%, 100% { opacity: 0; transform: translate(0); }
 }
 
 @keyframes glitch-idle-slice-b {
-  0%, 95% { opacity: 0; transform: translate(0); }
-  95.4% { opacity: 1; transform: translate(5px, 0); clip-path: inset(58% 0 0 0); }
-  95.7% { opacity: 1; transform: translate(-6px, 1px); clip-path: inset(48% 0 8% 0); }
-  96.5% { opacity: 1; transform: translate(7px, 0); clip-path: inset(70% 0 0 0); }
-  97.3% { opacity: 1; transform: translate(-3px, 0); clip-path: inset(30% 0 20% 0); }
-  98.4% { opacity: 1; transform: translate(4px, 0); clip-path: inset(55% 0 0 0); }
-  100% { opacity: 0; transform: translate(0); }
+  0%, 96% { opacity: 0; transform: translate(0); }
+  96.4% { opacity: 1; transform: translate(5px, 0); clip-path: inset(62% 0 0 0); }
+  97.4% { opacity: 1; transform: translate(-4px, 1px); clip-path: inset(40% 0 15% 0); }
+  98%, 100% { opacity: 0; transform: translate(0); }
 }
 
-/* Initial load animation. */
+@keyframes glitch-hover {
+  0% { transform: translate(0); clip-path: none; }
+  18% { transform: translate(-3px, 0); clip-path: inset(18% 0 52% 0); }
+  36% { transform: translate(3px, 1px); clip-path: inset(58% 0 8% 0); }
+  54% { transform: translate(-2px, 0); clip-path: inset(8% 0 40% 0); }
+  72% { transform: translate(2px, 0); clip-path: inset(30% 0 25% 0); }
+  100% { transform: translate(0); clip-path: none; }
+}
+
 .glitch-load {
   animation: glitch-in-jitter 0.5s steps(2, jump-end) both;
 }
@@ -630,7 +624,6 @@ footer {
   animation: glitch-in-slice-b 0.5s steps(2, jump-end) both;
 }
 
-/* Initial load followed by automatic glitches. */
 .glitch-load.glitch-idle {
   animation:
     glitch-in-jitter 0.5s steps(2, jump-end) both,
@@ -664,23 +657,10 @@ footer {
 
 .glitch-target:hover > .glitch-fx,
 .glitch-target:focus-visible > .glitch-fx {
-  animation: glitch-in-jitter 0.5s steps(2, jump-end) 1;
+  animation: glitch-hover 0.26s steps(2, jump-end) 1;
 }
 
-/* Click glitch: exactly the same animation as initial load. */
-.fullname.glitch-now .glitch.glitch-load.glitch-idle {
-  animation: glitch-in-jitter 0.5s steps(2, jump-end) 1;
-}
 
-.fullname.glitch-now .glitch.glitch-load.glitch-idle::before {
-  animation: glitch-in-slice-a 0.5s steps(2, jump-end) 1;
-}
-
-.fullname.glitch-now .glitch.glitch-load.glitch-idle::after {
-  animation: glitch-in-slice-b 0.5s steps(2, jump-end) 1;
-}
-
-/* Respect reduced-motion preferences. */
 @media (prefers-reduced-motion: reduce) {
   .glitch-load,
   .glitch-load::before,
@@ -689,10 +669,7 @@ footer {
   .glitch-load.glitch-idle::before,
   .glitch-load.glitch-idle::after,
   .glitch-target:hover > .glitch-fx,
-  .glitch-target:focus-visible > .glitch-fx,
-  .fullname.glitch-now .glitch.glitch-load.glitch-idle,
-  .fullname.glitch-now .glitch.glitch-load.glitch-idle::before,
-  .fullname.glitch-now .glitch.glitch-load.glitch-idle::after {
+  .glitch-target:focus-visible > .glitch-fx {
     animation: none;
   }
 
@@ -700,5 +677,43 @@ footer {
   .glitch::after {
     content: none;
     display: none;
+  }
+}
+
+/* Hover/focus glitch on the big titles (JS adds .glitch-now on mouseenter / keyboard focus).
+   Higher specificity than .glitch-load.glitch-idle so load+idle are paused and this plays once. */
+@keyframes glitch-hover-slice-a {
+  0% { opacity: 1; transform: translate(-4px, 0); clip-path: inset(0 0 62% 0); }
+  25% { opacity: 1; transform: translate(5px, 0); clip-path: inset(10% 0 48% 0); }
+  55% { opacity: 1; transform: translate(-5px, -1px); clip-path: inset(0 0 70% 0); }
+  80% { opacity: 1; transform: translate(3px, 0); clip-path: inset(20% 0 30% 0); }
+  100% { opacity: 0; transform: translate(0); clip-path: none; }
+}
+
+@keyframes glitch-hover-slice-b {
+  0% { opacity: 1; transform: translate(5px, 0); clip-path: inset(58% 0 0 0); }
+  25% { opacity: 1; transform: translate(-5px, 1px); clip-path: inset(45% 0 8% 0); }
+  55% { opacity: 1; transform: translate(6px, 0); clip-path: inset(70% 0 0 0); }
+  80% { opacity: 1; transform: translate(-3px, 0); clip-path: inset(28% 0 18% 0); }
+  100% { opacity: 0; transform: translate(0); clip-path: none; }
+}
+
+.fullname.glitch-now .glitch.glitch-load.glitch-idle {
+  animation: glitch-hover 0.26s steps(2, jump-end) 1;
+}
+
+.fullname.glitch-now .glitch.glitch-load.glitch-idle::before {
+  animation: glitch-hover-slice-a 0.26s steps(2, jump-end) 1;
+}
+
+.fullname.glitch-now .glitch.glitch-load.glitch-idle::after {
+  animation: glitch-hover-slice-b 0.26s steps(2, jump-end) 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fullname.glitch-now .glitch.glitch-load.glitch-idle,
+  .fullname.glitch-now .glitch.glitch-load.glitch-idle::before,
+  .fullname.glitch-now .glitch.glitch-load.glitch-idle::after {
+    animation: none;
   }
 }
