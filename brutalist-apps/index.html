@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Brutalist Apps — a suite of minimal apps for Windows and Android, by LRPSEC.">
+  <meta name="theme-color" content="#FFFFFF" id="theme-color">
+  <title>BRUTALIST APPS — LRPSEC</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="showcase.css">
+  <script>
+    (function () {
+      var KEY = 'lrpsec-theme';
+      var q = new URLSearchParams(location.search).get('theme');
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      var theme = (q === 'WHITE' || q === 'BLACK') ? q
+                : (saved === 'WHITE' || saved === 'BLACK') ? saved
+                : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'BLACK' : 'WHITE');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">SKIP TO CONTENT</a>
+  <header class="masthead">
+    <div class="masthead-start">
+      <a class="site-title" href="/" title="Portfolio">LRPSEC</a>
+      <span class="page-title">BRUTALIST APPS</span>
+    </div>
+  </header>
+  <main id="main">
+    <section class="suite-hero" aria-labelledby="suite-name">
+      <div class="suite-hero-top">
+        <svg class="suite-logo" viewBox="26 26 204 204" width="72" height="72" aria-hidden="true" focusable="false">
+          <path fill="currentColor" fill-rule="evenodd" d="M26 26h92v92H26zm112 0h92v92h-92zM155 43h58v58h-58zM26 138h92v92H26zm17 17h58v58h-58zM138 138h92v92h-92z"/>
+        </svg>
+        <div>
+          <h1 class="suite-name" id="suite-name"><button type="button" class="fullname" aria-label="Change theme"><span class="glitch glitch-load glitch-idle" data-text="BRUTALIST APPS">BRUTALIST APPS</span></button></h1>
+          <p class="suite-tagline">A SUITE OF MINIMAL APPS FOR WINDOWS AND ANDROID.</p>
+        </div>
+      </div>
+      <p class="suite-desc">FREE AND OPEN SOURCE UNDER THE MIT LICENSE. NO ADS AND NO TRACKING.</p>
+      <div class="hero-actions">
+        <div class="hero-outlinks" id="hero-outlinks"></div>
+      </div>
+    </section>
+
+    <section class="apps-section" aria-labelledby="apps-title">
+      <h2 class="section-title" id="apps-title">APPS</h2>
+      <div class="apps-grid" id="apps-grid"></div>
+      <div class="app-panel" id="app-panel" hidden>
+        <div class="panel-bar">
+          <h3 class="panel-name" tabindex="-1">APP</h3>
+          <button type="button" class="panel-close glitch-target" aria-label="Close"><span class="glitch-fx">CLOSE</span></button>
+        </div>
+        <div class="panel-body">
+          <div class="panel-info">
+            <p class="panel-summary"></p>
+            <ul class="panel-features"></ul>
+            <div class="platform-tags" aria-label="Platforms"></div>
+          </div>
+          <div class="panel-media">
+            <div class="media-frame" aria-live="polite">
+              <div class="media-slot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ: replace each summary and <p> below. Duplicate a details block to add a question. -->
+    <section class="faq-section" aria-labelledby="faq-title">
+      <h2 class="section-title" id="faq-title">FAQ</h2>
+      <details class="faq-item">
+        <summary>QUESTION COMING SOON.</summary>
+        <p>ANSWER COMING SOON.</p>
+      </details>
+      <details class="faq-item">
+        <summary>QUESTION COMING SOON.</summary>
+        <p>ANSWER COMING SOON.</p>
+      </details>
+      <details class="faq-item">
+        <summary>QUESTION COMING SOON.</summary>
+        <p>ANSWER COMING SOON.</p>
+      </details>
+    </section>
+  </main>
+  <p class="made-by">
+    <a class="glitch-target" href="/"><span class="glitch-fx">BUILT BY LRPSEC</span></a>
+  </p>
+  <footer>
+    <p>(C) 2026 LRPSEC</p>
+    <a class="footer-mail glitch-target" href="mailto:business@lrpsec.com"><span class="glitch-fx">
+      <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" d="M2.6 5.5h18.8v13H2.6z"/>
+        <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" d="M2.6 5.5 12 13.2 21.4 5.5"/>
+      </svg>
+      BUSINESS@LRPSEC.COM
+    </span></a>
+  </footer>
+  <script src="../theme.js"></script>
+  <script src="apps.js"></script>
+  <script src="showcase.js"></script>
+</body>
+</html>
