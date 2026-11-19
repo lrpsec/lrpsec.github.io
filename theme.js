@@ -1,3 +1,4 @@
+
 (function () {
   var KEY = 'lrpsec-theme';
   var root = document.documentElement;
@@ -27,17 +28,6 @@
   }
 
   if (name) {
-    name.addEventListener('click', flip);
-    if (name.tagName !== 'BUTTON') {
-      name.setAttribute('tabindex', '0');
-      name.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          flip();
-        }
-      });
-    }
-
     function reduceMotion() {
       return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     }
@@ -49,10 +39,22 @@
       name.classList.add('glitch-now');
     }
 
-    name.addEventListener('mouseenter', playTitleGlitch);
-    name.addEventListener('focus', function () {
-      if (name.matches && name.matches(':focus-visible')) playTitleGlitch();
+    name.addEventListener('click', function () {
+      flip();
+      playTitleGlitch();
     });
+
+    if (name.tagName !== 'BUTTON') {
+      name.setAttribute('tabindex', '0');
+      name.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          flip();
+          playTitleGlitch();
+        }
+      });
+    }
+
     name.addEventListener('animationend', function (e) {
       if (e.animationName === 'glitch-hover') name.classList.remove('glitch-now');
     });
