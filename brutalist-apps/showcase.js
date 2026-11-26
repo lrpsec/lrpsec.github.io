@@ -83,9 +83,6 @@
   var nameEl = document.getElementById("showcase-name-text");
   var blurbEl = document.getElementById("showcase-blurb");
   var iconWrap = document.getElementById("showcase-icon-wrap");
-  var shot = document.getElementById("showcase-shot");
-  var shotWhite = document.getElementById("shot-white");
-  var shotBlack = document.getElementById("shot-black");
 
   function motionOk() {
     return !(reduce && reduce.matches);
@@ -107,10 +104,6 @@
 
   function iconUrl(id) {
     return "../assets/apps/" + id + ".svg";
-  }
-
-  function fileFor(app, theme) {
-    return "placeholders/" + app.id + "-" + (theme === "BLACK" ? "black" : "white") + ".svg";
   }
 
   function replay(els, className) {
@@ -137,24 +130,14 @@
       nameEl.textContent = app.name;
       nameEl.setAttribute("data-text", app.name);
     }
-    if (blurbEl) blurbEl.textContent = app.blurb || "PLACEHOLDER SHORT DESCRIPTION.";
+    if (blurbEl) {
+      var blurb = app.blurb || "PLACEHOLDER SHORT DESCRIPTION.";
+      blurbEl.textContent = blurb;
+      blurbEl.setAttribute("data-text", blurb);
+    }
     var icon = 'url("' + iconUrl(app.id) + '")';
     if (iconWrap) iconWrap.style.setProperty("--icon", icon);
-    var white = fileFor(app, "WHITE");
-    var black = fileFor(app, "BLACK");
-    if (shotWhite) {
-      shotWhite.src = white;
-      shotWhite.alt = app.name + ". Placeholder, laptop and phone together. White theme.";
-    }
-    if (shotBlack) {
-      shotBlack.src = black;
-      shotBlack.alt = app.name + ". Placeholder, laptop and phone together. Black theme.";
-    }
-    if (shot) {
-      shot.style.setProperty("--shot-white", "url('" + white + "')");
-      shot.style.setProperty("--shot-black", "url('" + black + "')");
-    }
-    if (animate) replay([nameEl, iconWrap, shot], "glitch-soft");
+    if (animate) replay([nameEl, blurbEl, iconWrap], "glitch-soft");
   }
 
   function restart() {
@@ -192,10 +175,7 @@
     });
   }
 
-  document.documentElement.addEventListener("lrpsec-theme", function () {
-    updateThemeLabels();
-    if (shot) replay([shot], "glitch-theme");
-  });
+  document.documentElement.addEventListener("lrpsec-theme", updateThemeLabels);
 
   APPS.forEach(function (app) {
     var btn = document.createElement("button");

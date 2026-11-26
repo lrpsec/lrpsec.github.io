@@ -510,52 +510,20 @@ a.page-title:focus-visible {
   max-width: 28em;
 }
 
+.showcase-blurb .glitch {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.showcase-blurb .glitch::before,
+.showcase-blurb .glitch::after {
+  white-space: normal;
+}
+
 .showcase-shot {
-  --shot-white: url("placeholders/alarms-white.svg");
-  --shot-black: url("placeholders/alarms-black.svg");
-  --shot: var(--shot-white);
-  position: relative;
   border: 4px solid var(--ink);
   background: var(--paper);
   aspect-ratio: 3 / 2;
-  overflow: hidden;
-}
-
-[data-theme="BLACK"] .showcase-shot {
-  --shot: var(--shot-black);
-}
-
-.showcase-shot .shot {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: var(--paper);
-}
-
-[data-theme="BLACK"] .showcase-shot .shot-white {
-  display: none;
-}
-
-:root:not([data-theme="BLACK"]) .showcase-shot .shot-black {
-  display: none;
-}
-
-.showcase-shot::before,
-.showcase-shot::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-color: var(--paper);
-  background-image: var(--shot);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  opacity: 0;
-  pointer-events: none;
 }
 
 .glitch-icon {
@@ -609,33 +577,6 @@ a.page-title:focus-visible {
 }
 
 .glitch.glitch-soft::after {
-  animation: glitch-soft-slice-b var(--glitch-dur) steps(2, jump-end) both;
-}
-
-.showcase-shot.glitch-load .shot,
-.showcase-shot.glitch-theme .shot {
-  animation: glitch-in-jitter var(--glitch-dur) steps(2, jump-end) both;
-}
-
-.showcase-shot.glitch-load::before,
-.showcase-shot.glitch-theme::before {
-  animation: glitch-in-slice-a var(--glitch-dur) steps(2, jump-end) both;
-}
-
-.showcase-shot.glitch-load::after,
-.showcase-shot.glitch-theme::after {
-  animation: glitch-in-slice-b var(--glitch-dur) steps(2, jump-end) both;
-}
-
-.showcase-shot.glitch-soft .shot {
-  animation: glitch-soft-jitter var(--glitch-dur) steps(2, jump-end) both;
-}
-
-.showcase-shot.glitch-soft::before {
-  animation: glitch-soft-slice-a var(--glitch-dur) steps(2, jump-end) both;
-}
-
-.showcase-shot.glitch-soft::after {
   animation: glitch-soft-slice-b var(--glitch-dur) steps(2, jump-end) both;
 }
 
@@ -766,10 +707,7 @@ a.page-title:focus-visible {
   .glitch-icon .slice,
   .glitch.glitch-soft,
   .glitch.glitch-soft::before,
-  .glitch.glitch-soft::after,
-  .showcase-shot .shot,
-  .showcase-shot::before,
-  .showcase-shot::after {
+  .glitch.glitch-soft::after {
     animation: none !important;
   }
 }
