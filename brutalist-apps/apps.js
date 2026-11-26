@@ -1,140 +1,171 @@
-/* Fill in each app below. Keep id, name, and platforms as they are.
+/* Names are the current product names. ids stay on the old slugs so
+ * icon files and #hashes do not move.
  *
- * summary: one short line shown at the top of the app panel.
- * features: a list of capability lines (add or replace the placeholder).
- * media: drop files in media/<id>/ and set, e.g.
+ * alarms   ALARMS    -> ALARM
+ * notes    NOTES     -> NOTE
+ * player   PLAYER    -> MUSIC PLAYER
+ * (no Viewer app in this repo)
+ *
+ * blurb: short line in the rotating showcase.
+ * summary: in-depth panel description (placeholder until final copy).
+ * features: placeholder capability lines.
+ * media: optional later file, same shape as before.
  *   media: { video: "media/player/showcase.webm", gif: "media/player/showcase.gif" }
- * video may be .webm or .mp4 (preferred: looping muted autoplay). gif is the fallback.
- * A single path string is also accepted. null shows "NAME — SHOWCASE COMING SOON".
  */
 window.BRUTALIST_APPS = [
   {
     id: "alarms",
-    name: "ALARMS",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "ALARM",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR ALARM. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "calculator",
     name: "CALCULATOR",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR CALCULATOR. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "camera",
     name: "CAMERA",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR CAMERA. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "explorer",
     name: "EXPLORER",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR EXPLORER. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "gallery",
     name: "GALLERY",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR GALLERY. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "home",
     name: "HOME",
-    platforms: ["ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR HOME. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "keyboard",
     name: "KEYBOARD",
-    platforms: ["ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR KEYBOARD. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "launcher",
     name: "LAUNCHER",
-    platforms: ["WINDOWS"],
-    summary: "DESCRIPTION COMING SOON.",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR LAUNCHER. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "notes",
-    name: "NOTES",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "NOTE",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR NOTE. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "paint",
     name: "PAINT",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR PAINT. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "player",
-    name: "PLAYER",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "MUSIC PLAYER",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR MUSIC PLAYER. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "reader",
     name: "READER",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR READER. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "recorder",
     name: "RECORDER",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR RECORDER. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   }

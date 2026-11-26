@@ -18,6 +18,8 @@
 [data-theme="WHITE"] {
   --paper: #FFFFFF;
   --ink: #000000;
+  /* Page-load, theme-change, and showcase glitches share this duration. */
+  --glitch-dur: 0.5s;
   color-scheme: light;
 }
 
@@ -164,20 +166,49 @@ a.site-title:focus-visible {
   outline: none;
 }
 
+.theme-btn {
+  font: inherit;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: inherit;
+  background: transparent;
+  border: 4px solid var(--ink);
+  padding: 6px 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.theme-btn .glitch-fx {
+  display: inline-block;
+  pointer-events: none;
+}
+
+.theme-btn:hover,
+.theme-btn:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+  outline: none;
+}
+
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(240px, 30vw);
-  gap: 24px 40px;
+  grid-template-columns: minmax(0, 1fr) clamp(72px, 30vw, 360px);
+  gap: clamp(10px, 2.2vw, 40px);
   align-items: center;
-  padding: 20px 40px;
+  padding: clamp(14px, 2vw, 20px) clamp(16px, 3vw, 40px);
   border-bottom: 4px solid var(--ink);
 }
 
+.identity {
+  min-width: 0;
+  container-type: inline-size;
+}
+
 .fullname {
-  font-size: clamp(3rem, 7.4vw, 6rem);
+  font-size: clamp(1.7rem, 7.4vw, 6rem);
   line-height: 0.92;
   letter-spacing: -0.01em;
-  cursor: pointer;
   display: inline-block;
   text-transform: uppercase;
   max-width: 100%;
@@ -194,37 +225,27 @@ a.site-title:focus-visible {
   -webkit-tap-highlight-color: transparent;
 }
 
-.fullname:hover,
-.fullname:active,
-.fullname:focus {
-  background: transparent;
-  color: inherit;
-  outline: none;
-  box-shadow: none;
-  border: 0;
-}
-
-/* Keyboard only — a bar under the name, no layout shift, no hover box. */
-.fullname:focus-visible {
-  background: transparent;
-  color: inherit;
-  outline: none;
-  box-shadow: 0 4px 0 0 var(--ink);
+@supports (font-size: 1cqi) {
+  .fullname {
+    font-size: clamp(1rem, 12.4cqi, 6rem);
+  }
 }
 
 .handle {
   margin-top: 16px;
   font-size: 22px;
+  font-size: clamp(14px, 5cqi, 22px);
   letter-spacing: 0.08em;
 }
 
 .role {
   margin-top: 20px;
   font-size: 20px;
+  font-size: clamp(13px, 4.2cqi, 20px);
   letter-spacing: 0.12em;
   padding-top: 14px;
   border-top: 4px solid var(--ink);
-  max-width: 22em;
+  max-width: 100%;
 }
 
 .photo {
@@ -232,8 +253,8 @@ a.site-title:focus-visible {
   border: 4px solid var(--ink);
   background: #FFFFFF;
   width: 100%;
-  max-width: 360px;
-  justify-self: end;
+  max-width: none;
+  justify-self: stretch;
   aspect-ratio: 1 / 1;
   overflow: hidden;
 }
@@ -248,12 +269,13 @@ a.site-title:focus-visible {
 
 .panels {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.8fr);
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.85fr);
   flex: 1;
 }
 
 .panel {
   padding: 16px 40px 16px;
+  min-width: 0;
 }
 
 .projects {
@@ -347,7 +369,9 @@ a.site-title:focus-visible {
 .link-copy {
   display: inline-flex;
   align-items: baseline;
-  gap: 0.55em;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2em 0.55em;
   min-width: 0;
 }
 
@@ -380,13 +404,30 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px 24px;
+  flex-wrap: wrap;
+  gap: 8px 20px;
   border-top: 4px solid var(--ink);
   padding: 10px 40px;
   font-size: 14px;
   letter-spacing: 0.08em;
   flex-shrink: 0;
   margin-top: auto;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  padding: 4px 8px;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+  outline: none;
 }
 
 .footer-mail {
@@ -412,75 +453,36 @@ footer {
 }
 
 @media (max-width: 800px) {
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 16px 20px 20px;
-    gap: 16px;
-  }
-
-  .fullname {
-    font-size: clamp(2.6rem, 14vw, 4.2rem);
-  }
-
-  .photo {
-    justify-self: start;
-    width: 180px;
-    max-width: 180px;
-  }
-
-  .panels {
-    display: contents;
-  }
-
-  .links {
-    order: 1;
-    border-bottom: 4px solid var(--ink);
-  }
-
-  .projects {
-    order: 2;
-    border-right: 0;
-    border-bottom: 0;
-  }
-
+  .masthead,
   .panel,
-  footer,
-  .masthead {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
   footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
-  .footer-mail {
-    margin-right: 0;
-    padding-left: 0;
-  }
-
-  .handle {
-    font-size: 18px;
-    margin-top: 12px;
-  }
-
-  .role {
-    font-size: 16px;
-    letter-spacing: 0.1em;
-    margin-top: 16px;
-    padding-top: 12px;
-  }
-
-  .project-title {
-    font-size: 22px;
+  .hero {
+    padding: 14px 16px;
     gap: 10px;
   }
 
+  .handle {
+    margin-top: 10px;
+  }
+
+  .role {
+    letter-spacing: 0.08em;
+    margin-top: 12px;
+    padding-top: 10px;
+  }
+
+  .project-title {
+    font-size: 18px;
+    gap: 8px;
+  }
+
   .project-logo {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 
   .app-list {
@@ -489,7 +491,7 @@ footer {
 
   .app-list li {
     padding: 4px 7px;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 0.04em;
   }
 
@@ -498,24 +500,33 @@ footer {
     height: 14px;
   }
 
+  .visit,
+  .link-list a {
+    padding: 6px 8px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
   .visit {
-    padding: 8px 12px;
-    font-size: 14px;
-    min-width: 5.5em;
+    min-width: 0;
   }
 
   .panel {
-    padding: 16px 20px 16px;
+    padding: 14px 16px;
   }
-}
 
-@media (max-width: 420px) {
-  .masthead {
-    min-height: 52px;
+  .theme-btn {
+    font-size: 13px;
+    padding: 5px 8px;
   }
 
   .site-title {
-    font-size: 20px;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  .footer-mail {
+    margin-right: 0;
   }
 }
 
@@ -613,33 +624,45 @@ footer {
 }
 
 .glitch-load {
-  animation: glitch-in-jitter 0.5s steps(2, jump-end) both;
+  animation: glitch-in-jitter var(--glitch-dur) steps(2, jump-end) both;
 }
 
 .glitch-load::before {
-  animation: glitch-in-slice-a 0.5s steps(2, jump-end) both;
+  animation: glitch-in-slice-a var(--glitch-dur) steps(2, jump-end) both;
 }
 
 .glitch-load::after {
-  animation: glitch-in-slice-b 0.5s steps(2, jump-end) both;
+  animation: glitch-in-slice-b var(--glitch-dur) steps(2, jump-end) both;
+}
+
+.glitch-idle {
+  animation: glitch-idle-jitter 10s infinite steps(2, jump-end);
+}
+
+.glitch-idle::before {
+  animation: glitch-idle-slice-a 10s infinite steps(2, jump-end);
+}
+
+.glitch-idle::after {
+  animation: glitch-idle-slice-b 10s infinite steps(2, jump-end);
 }
 
 .glitch-load.glitch-idle {
   animation:
-    glitch-in-jitter 0.5s steps(2, jump-end) both,
-    glitch-idle-jitter 10s 0.5s infinite steps(2, jump-end);
+    glitch-in-jitter var(--glitch-dur) steps(2, jump-end) both,
+    glitch-idle-jitter 10s var(--glitch-dur) infinite steps(2, jump-end);
 }
 
 .glitch-load.glitch-idle::before {
   animation:
-    glitch-in-slice-a 0.5s steps(2, jump-end) both,
-    glitch-idle-slice-a 10s 0.5s infinite steps(2, jump-end);
+    glitch-in-slice-a var(--glitch-dur) steps(2, jump-end) both,
+    glitch-idle-slice-a 10s var(--glitch-dur) infinite steps(2, jump-end);
 }
 
 .glitch-load.glitch-idle::after {
   animation:
-    glitch-in-slice-b 0.5s steps(2, jump-end) both,
-    glitch-idle-slice-b 10s 0.5s infinite steps(2, jump-end);
+    glitch-in-slice-b var(--glitch-dur) steps(2, jump-end) both,
+    glitch-idle-slice-b 10s var(--glitch-dur) infinite steps(2, jump-end);
 }
 
 .glitch-target {
@@ -665,11 +688,20 @@ footer {
   .glitch-load,
   .glitch-load::before,
   .glitch-load::after,
+  .glitch-idle,
+  .glitch-idle::before,
+  .glitch-idle::after,
   .glitch-load.glitch-idle,
   .glitch-load.glitch-idle::before,
   .glitch-load.glitch-idle::after,
   .glitch-target:hover > .glitch-fx,
-  .glitch-target:focus-visible > .glitch-fx {
+  .glitch-target:focus-visible > .glitch-fx,
+  [data-glitch-title].glitch-theme .glitch,
+  [data-glitch-title].glitch-theme .glitch::before,
+  [data-glitch-title].glitch-theme .glitch::after,
+  [data-glitch-title].glitch-now .glitch,
+  [data-glitch-title].glitch-now .glitch::before,
+  [data-glitch-title].glitch-now .glitch::after {
     animation: none;
   }
 
@@ -698,22 +730,26 @@ footer {
   100% { opacity: 0; transform: translate(0); clip-path: none; }
 }
 
-.fullname.glitch-now .glitch.glitch-load.glitch-idle {
+[data-glitch-title].glitch-now .glitch {
   animation: glitch-hover 0.26s steps(2, jump-end) 1;
 }
 
-.fullname.glitch-now .glitch.glitch-load.glitch-idle::before {
+[data-glitch-title].glitch-now .glitch::before {
   animation: glitch-hover-slice-a 0.26s steps(2, jump-end) 1;
 }
 
-.fullname.glitch-now .glitch.glitch-load.glitch-idle::after {
+[data-glitch-title].glitch-now .glitch::after {
   animation: glitch-hover-slice-b 0.26s steps(2, jump-end) 1;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .fullname.glitch-now .glitch.glitch-load.glitch-idle,
-  .fullname.glitch-now .glitch.glitch-load.glitch-idle::before,
-  .fullname.glitch-now .glitch.glitch-load.glitch-idle::after {
-    animation: none;
-  }
+[data-glitch-title].glitch-theme .glitch {
+  animation: glitch-in-jitter var(--glitch-dur) steps(2, jump-end) both;
+}
+
+[data-glitch-title].glitch-theme .glitch::before {
+  animation: glitch-in-slice-a var(--glitch-dur) steps(2, jump-end) both;
+}
+
+[data-glitch-title].glitch-theme .glitch::after {
+  animation: glitch-in-slice-b var(--glitch-dur) steps(2, jump-end) both;
 }

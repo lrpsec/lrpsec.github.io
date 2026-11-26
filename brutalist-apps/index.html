@@ -3,12 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Brutalist Apps — a suite of minimal apps for Windows and Android, by LRPSEC.">
+  <title>BRUTALIST APPS | LRPSEC</title>
+  <meta name="description" content="A SUITE OF MINIMAL APPS FOR WINDOWS AND ANDROID BY LRPSEC. FREE AND OPEN SOURCE UNDER THE MIT LICENSE. NO ADS AND NO TRACKING.">
+  <link rel="canonical" href="https://lrpsec.com/brutalist-apps/">
+  <meta property="og:title" content="BRUTALIST APPS | LRPSEC">
+  <meta property="og:description" content="A SUITE OF MINIMAL APPS FOR WINDOWS AND ANDROID BY LRPSEC. FREE AND OPEN SOURCE UNDER THE MIT LICENSE. NO ADS AND NO TRACKING.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lrpsec.com/brutalist-apps/">
+  <meta property="og:site_name" content="Brutalist Apps">
+  <meta property="og:image" content="https://lrpsec.com/brutalist-apps/og.png">
+  <meta property="og:image:alt" content="Brutalist Apps">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="BRUTALIST APPS | LRPSEC">
+  <meta name="twitter:description" content="A SUITE OF MINIMAL APPS FOR WINDOWS AND ANDROID BY LRPSEC. FREE AND OPEN SOURCE UNDER THE MIT LICENSE. NO ADS AND NO TRACKING.">
+  <meta name="twitter:image" content="https://lrpsec.com/brutalist-apps/og.png">
+  <meta name="twitter:image:alt" content="Brutalist Apps">
   <meta name="theme-color" content="#FFFFFF" id="theme-color">
-  <title>BRUTALIST APPS — LRPSEC</title>
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="../favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Brutalist Apps",
+    "url": "https://lrpsec.com/brutalist-apps/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Windows, Android",
+    "description": "A SUITE OF MINIMAL APPS FOR WINDOWS AND ANDROID BY LRPSEC. FREE AND OPEN SOURCE UNDER THE MIT LICENSE. NO ADS AND NO TRACKING.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Lucas Petruccelli",
+      "url": "https://lrpsec.com/"
+    }
+  }
+  </script>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="apple-touch-icon.png" sizes="180x180" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="showcase.css">
   <script>
     (function () {
@@ -30,21 +66,51 @@
       <a class="site-title" href="/" title="Portfolio">LRPSEC</a>
       <span class="page-title">BRUTALIST APPS</span>
     </div>
+    <button type="button" class="theme-btn glitch-target" id="theme-toggle" aria-pressed="false" aria-label="Theme">
+      <span class="glitch-fx">THEME</span>
+    </button>
   </header>
   <main id="main">
     <section class="suite-hero" aria-labelledby="suite-name">
       <div class="suite-hero-top">
-        <svg class="suite-logo" viewBox="26 26 204 204" width="72" height="72" aria-hidden="true" focusable="false">
-          <path fill="currentColor" fill-rule="evenodd" d="M26 26h92v92H26zm112 0h92v92h-92zM155 43h58v58h-58zM26 138h92v92H26zm17 17h58v58h-58zM138 138h92v92h-92z"/>
-        </svg>
+        <span class="glitch-icon suite-mark glitch-load" data-glitch-icon>
+          <svg class="suite-logo" viewBox="26 26 204 204" aria-hidden="true" focusable="false">
+            <path fill="currentColor" fill-rule="evenodd" d="M26 26h92v92H26zm112 0h92v92h-92zM155 43h58v58h-58zM26 138h92v92H26zm17 17h58v58h-58zM138 138h92v92h-92z"/>
+          </svg>
+          <svg class="suite-logo slice slice-a" viewBox="26 26 204 204" aria-hidden="true" focusable="false">
+            <path fill="currentColor" fill-rule="evenodd" d="M26 26h92v92H26zm112 0h92v92h-92zM155 43h58v58h-58zM26 138h92v92H26zm17 17h58v58h-58zM138 138h92v92h-92z"/>
+          </svg>
+          <svg class="suite-logo slice slice-b" viewBox="26 26 204 204" aria-hidden="true" focusable="false">
+            <path fill="currentColor" fill-rule="evenodd" d="M26 26h92v92H26zm112 0h92v92h-92zM155 43h58v58h-58zM26 138h92v92H26zm17 17h58v58h-58zM138 138h92v92h-92z"/>
+          </svg>
+        </span>
         <div>
-          <h1 class="suite-name" id="suite-name"><button type="button" class="fullname" aria-label="Change theme"><span class="glitch glitch-load glitch-idle" data-text="BRUTALIST APPS">BRUTALIST APPS</span></button></h1>
+          <h1 class="suite-name" id="suite-name" data-glitch-title><span class="glitch glitch-load glitch-idle" data-text="BRUTALIST APPS">BRUTALIST APPS</span></h1>
           <p class="suite-tagline">A SUITE OF MINIMAL APPS FOR DESKTOP AND MOBILE.</p>
         </div>
       </div>
       <p class="suite-desc">FREE AND OPEN SOURCE UNDER THE MIT LICENSE. NO ADS AND NO TRACKING.</p>
       <div class="hero-actions">
         <div class="hero-outlinks" id="hero-outlinks"></div>
+      </div>
+    </section>
+
+    <section class="main-showcase" aria-label="Application showcase">
+      <div class="showcase-layout">
+        <div class="showcase-copy">
+          <span class="glitch-icon showcase-icon-wrap glitch-load" id="showcase-icon-wrap">
+            <span class="app-icon showcase-app-icon" aria-hidden="true"></span>
+            <span class="app-icon showcase-app-icon slice slice-a" aria-hidden="true"></span>
+            <span class="app-icon showcase-app-icon slice slice-b" aria-hidden="true"></span>
+          </span>
+          <p class="showcase-name" id="showcase-name">
+            <span class="glitch glitch-load" id="showcase-name-text" data-text="ALARM">ALARM</span>
+          </p>
+          <p class="showcase-blurb">
+            <span class="glitch glitch-load" id="showcase-blurb" data-text="PLACEHOLDER SHORT DESCRIPTION.">PLACEHOLDER SHORT DESCRIPTION.</span>
+          </p>
+        </div>
+        <div class="showcase-shot" id="showcase-shot" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -60,18 +126,17 @@
           <div class="panel-info">
             <p class="panel-summary"></p>
             <ul class="panel-features"></ul>
-            <div class="platform-tags" aria-label="Platforms"></div>
           </div>
           <div class="panel-media">
-            <div class="media-frame" aria-live="polite">
+            <div class="media-frame" hidden>
               <div class="media-slot"></div>
             </div>
+            <div class="shot-grid" aria-label="Placeholder screenshots"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ: replace each summary and <p> below. Duplicate a details block to add a question. -->
     <section class="faq-section" aria-labelledby="faq-title">
       <h2 class="section-title" id="faq-title">FAQ</h2>
       <details class="faq-item">
@@ -97,10 +162,11 @@
     </section>
   </main>
   <p class="made-by">
-    <a class="glitch-target" href="/"><span class="glitch-fx">BUILT BY LRPSEC</span></a>
+    <a class="glitch-target" href="/"><span class="glitch-fx">BY LRPSEC</span></a>
   </p>
   <footer>
     <p>(C) 2026 LRPSEC</p>
+    <a class="footer-link glitch-target" href="/brutalist-apps/privacy/"><span class="glitch-fx">PRIVACY</span></a>
     <a class="footer-mail glitch-target" href="mailto:business@lrpsec.com"><span class="glitch-fx">
       <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" d="M2.6 5.5h18.8v13H2.6z"/>

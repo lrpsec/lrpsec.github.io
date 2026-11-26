@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRIVACY | BRUTALIST APPS</title>
+  <meta name="description" content="BRUTALIST APPS COLLECT NO DATA. THE APPS HAVE NO ADS, NO TRACKING, AND NO NETWORK USE.">
+  <link rel="canonical" href="https://lrpsec.com/brutalist-apps/privacy/">
+  <meta property="og:title" content="PRIVACY | BRUTALIST APPS">
+  <meta property="og:description" content="BRUTALIST APPS COLLECT NO DATA. THE APPS HAVE NO ADS, NO TRACKING, AND NO NETWORK USE.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lrpsec.com/brutalist-apps/privacy/">
+  <meta property="og:site_name" content="Brutalist Apps">
+  <meta property="og:image" content="https://lrpsec.com/brutalist-apps/og.png">
+  <meta property="og:image:alt" content="Brutalist Apps">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PRIVACY | BRUTALIST APPS">
+  <meta name="twitter:description" content="BRUTALIST APPS COLLECT NO DATA. THE APPS HAVE NO ADS, NO TRACKING, AND NO NETWORK USE.">
+  <meta name="twitter:image" content="https://lrpsec.com/brutalist-apps/og.png">
+  <meta name="twitter:image:alt" content="Brutalist Apps">
+  <meta name="theme-color" content="#FFFFFF" id="theme-color">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../apple-touch-icon.png" sizes="180x180" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../showcase.css">
+  <script>
+    (function () {
+      var KEY = 'lrpsec-theme';
+      var q = new URLSearchParams(location.search).get('theme');
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      var theme = (q === 'WHITE' || q === 'BLACK') ? q
+                : (saved === 'WHITE' || saved === 'BLACK') ? saved
+                : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'BLACK' : 'WHITE');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">SKIP TO CONTENT</a>
+  <header class="masthead">
+    <div class="masthead-start">
+      <a class="site-title" href="/" title="Portfolio">LRPSEC</a>
+      <a class="page-title" href="/brutalist-apps/">BRUTALIST APPS</a>
+    </div>
+    <button type="button" class="theme-btn glitch-target" id="theme-toggle" aria-pressed="false" aria-label="Theme">
+      <span class="glitch-fx">THEME</span>
+    </button>
+  </header>
+  <main id="main" class="privacy">
+    <h1 class="privacy-title" data-glitch-title><span class="glitch glitch-load glitch-idle" data-text="PRIVACY">PRIVACY</span></h1>
+    <p class="privacy-lead">BRUTALIST APPS</p>
+    <section class="privacy-block" aria-labelledby="privacy-data">
+      <h2 id="privacy-data">DATA</h2>
+      <p>BRUTALIST APPS COLLECT NO DATA.</p>
+    </section>
+    <section class="privacy-block" aria-labelledby="privacy-ads">
+      <h2 id="privacy-ads">ADS AND TRACKING</h2>
+      <p>THE APPS HAVE NO ADS AND NO TRACKING.</p>
+    </section>
+    <section class="privacy-block" aria-labelledby="privacy-network">
+      <h2 id="privacy-network">NETWORK</h2>
+      <p>THE APPS DO NOT USE THE NETWORK.</p>
+    </section>
+    <section class="privacy-block" aria-labelledby="privacy-permissions">
+      <h2 id="privacy-permissions">PERMISSIONS</h2>
+      <p>PERMISSIONS ARE USED ONLY FOR THEIR STATED FEATURES.</p>
+    </section>
+    <section class="privacy-block" aria-labelledby="privacy-contact">
+      <h2 id="privacy-contact">CONTACT</h2>
+      <p>
+        <a class="privacy-mail glitch-target" href="mailto:business@lrpsec.com"><span class="glitch-fx">
+          <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" d="M2.6 5.5h18.8v13H2.6z"/>
+            <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" d="M2.6 5.5 12 13.2 21.4 5.5"/>
+          </svg>
+          BUSINESS@LRPSEC.COM
+        </span></a>
+      </p>
+    </section>
+  </main>
+  <footer>
+    <p>(C) 2026 LRPSEC</p>
+    <a class="footer-link" href="/brutalist-apps/privacy/" aria-current="page">PRIVACY</a>
+    <a class="footer-mail glitch-target" href="mailto:business@lrpsec.com"><span class="glitch-fx">
+      <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" d="M2.6 5.5h18.8v13H2.6z"/>
+        <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" d="M2.6 5.5 12 13.2 21.4 5.5"/>
+      </svg>
+      BUSINESS@LRPSEC.COM
+    </span></a>
+  </footer>
+  <script src="../../theme.js"></script>
+</body>
+</html>
