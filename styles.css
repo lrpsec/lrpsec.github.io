@@ -528,6 +528,19 @@ footer {
   .footer-mail {
     margin-right: 0;
   }
+
+  .panels {
+    grid-template-columns: 1fr;
+  }
+
+  .links {
+    order: -1;
+    border-bottom: 4px solid var(--ink);
+  }
+
+  .projects {
+    border-right: 0;
+  }
 }
 
 /* Cyberpunk-style monochrome glitch. Disabled under prefers-reduced-motion. */
@@ -698,10 +711,7 @@ footer {
   .glitch-target:focus-visible > .glitch-fx,
   [data-glitch-title].glitch-theme .glitch,
   [data-glitch-title].glitch-theme .glitch::before,
-  [data-glitch-title].glitch-theme .glitch::after,
-  [data-glitch-title].glitch-now .glitch,
-  [data-glitch-title].glitch-now .glitch::before,
-  [data-glitch-title].glitch-now .glitch::after {
+  [data-glitch-title].glitch-theme .glitch::after {
     animation: none;
   }
 
@@ -710,36 +720,6 @@ footer {
     content: none;
     display: none;
   }
-}
-
-/* Hover/focus glitch on the big titles (JS adds .glitch-now on mouseenter / keyboard focus).
-   Higher specificity than .glitch-load.glitch-idle so load+idle are paused and this plays once. */
-@keyframes glitch-hover-slice-a {
-  0% { opacity: 1; transform: translate(-4px, 0); clip-path: inset(0 0 62% 0); }
-  25% { opacity: 1; transform: translate(5px, 0); clip-path: inset(10% 0 48% 0); }
-  55% { opacity: 1; transform: translate(-5px, -1px); clip-path: inset(0 0 70% 0); }
-  80% { opacity: 1; transform: translate(3px, 0); clip-path: inset(20% 0 30% 0); }
-  100% { opacity: 0; transform: translate(0); clip-path: none; }
-}
-
-@keyframes glitch-hover-slice-b {
-  0% { opacity: 1; transform: translate(5px, 0); clip-path: inset(58% 0 0 0); }
-  25% { opacity: 1; transform: translate(-5px, 1px); clip-path: inset(45% 0 8% 0); }
-  55% { opacity: 1; transform: translate(6px, 0); clip-path: inset(70% 0 0 0); }
-  80% { opacity: 1; transform: translate(-3px, 0); clip-path: inset(28% 0 18% 0); }
-  100% { opacity: 0; transform: translate(0); clip-path: none; }
-}
-
-[data-glitch-title].glitch-now .glitch {
-  animation: glitch-hover 0.26s steps(2, jump-end) 1;
-}
-
-[data-glitch-title].glitch-now .glitch::before {
-  animation: glitch-hover-slice-a 0.26s steps(2, jump-end) 1;
-}
-
-[data-glitch-title].glitch-now .glitch::after {
-  animation: glitch-hover-slice-b 0.26s steps(2, jump-end) 1;
 }
 
 [data-glitch-title].glitch-theme .glitch {

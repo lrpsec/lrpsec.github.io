@@ -63,15 +63,6 @@
 
   if (btn) btn.addEventListener('click', flip);
 
-  document.querySelectorAll('[data-glitch-title]').forEach(function (name) {
-    name.addEventListener('mouseenter', function () {
-      name.querySelectorAll('.glitch').forEach(function (g) {
-        g.classList.remove('glitch-load');
-      });
-      replay(name, 'glitch-now');
-    });
-  });
-
   window.setTimeout(function () {
     document.querySelectorAll('.glitch-load').forEach(function (el) {
       el.classList.remove('glitch-load');
