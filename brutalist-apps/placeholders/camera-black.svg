@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img">
+  <title>BRUTALIST CAMERA laptop and phone placeholder BLACK</title>
+  <rect width="960" height="640" fill="#000000"/>
+  <rect x="16" y="16" width="928" height="608" fill="none" stroke="#FFFFFF" stroke-width="8"/>
+  <text x="48" y="72" fill="#FFFFFF" font-family="ui-monospace, monospace" font-size="28" letter-spacing="4">PLACEHOLDER</text>
+  <text x="48" y="112" fill="#FFFFFF" font-family="ui-monospace, monospace" font-size="22" letter-spacing="2">BRUTALIST CAMERA</text>
+  <text x="48" y="148" fill="#FFFFFF" font-family="ui-monospace, monospace" font-size="18" letter-spacing="3">LAPTOP + PHONE</text>
+  <text x="760" y="72" fill="#FFFFFF" font-family="ui-monospace, monospace" font-size="22" letter-spacing="4">BLACK</text>
+  <rect x="48" y="180" width="560" height="300" fill="#000000" stroke="#FFFFFF" stroke-width="8"/>
+  <text x="328" y="348" text-anchor="middle" fill="#FFFFFF" font-family="ui-monospace, monospace" font-size="32" letter-spacing="6">LAPTOP</text>
+  <path d="M32 480 h592 v28 h-592 z" fill="none" stroke="#FFFFFF" stroke-width="8"/>
+  <rect x="250" y="508" width="156" height="12" fill="#FFFFFF"/>
+  <rect x="680" y="180" width="220" height="400" fill="#000000" stroke="#FFFFFF" stroke-width="8"/>
+  <rect x="762" y="200" width="56" height="10" fill="#FFFFFF"/>
+  <text x="790" y="400" text-anchor="middle" fill="#FFFFFF" font-family="ui-monospace, monospace" font-size="22" letter-spacing="4">PHONE</text>
+</svg>

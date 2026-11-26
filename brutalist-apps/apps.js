@@ -1,140 +1,171 @@
-/* Fill in each app below. Keep id, name, and platforms as they are.
+/* Names are the current product names. ids stay on the old slugs so
+ * icon files and #hashes do not move.
  *
- * summary: one short line shown at the top of the app panel.
- * features: a list of capability lines (add or replace the placeholder).
- * media: drop files in media/<id>/ and set, e.g.
+ * alarms   ALARMS    -> BRUTALIST ALARM
+ * notes    NOTES     -> BRUTALIST NOTE
+ * player   PLAYER    -> BRUTALIST MUSIC PLAYER
+ * (no Viewer app in this repo)
+ *
+ * blurb: short line in the rotating showcase.
+ * summary: in-depth panel description (placeholder until final copy).
+ * features: placeholder capability lines.
+ * media: optional later file, same shape as before.
  *   media: { video: "media/player/showcase.webm", gif: "media/player/showcase.gif" }
- * video may be .webm or .mp4 (preferred: looping muted autoplay). gif is the fallback.
- * A single path string is also accepted. null shows "NAME — SHOWCASE COMING SOON".
  */
 window.BRUTALIST_APPS = [
   {
     id: "alarms",
-    name: "ALARMS",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "BRUTALIST ALARM",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR BRUTALIST ALARM. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "calculator",
-    name: "CALCULATOR",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "BRUTALIST CALCULATOR",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR BRUTALIST CALCULATOR. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "camera",
-    name: "CAMERA",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "BRUTALIST CAMERA",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR BRUTALIST CAMERA. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "explorer",
-    name: "EXPLORER",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "BRUTALIST EXPLORER",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR BRUTALIST EXPLORER. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "gallery",
-    name: "GALLERY",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "BRUTALIST GALLERY",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR BRUTALIST GALLERY. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "home",
-    name: "HOME",
-    platforms: ["ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "BRUTALIST HOME",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR BRUTALIST HOME. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "keyboard",
-    name: "KEYBOARD",
-    platforms: ["ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "BRUTALIST KEYBOARD",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR BRUTALIST KEYBOARD. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "launcher",
-    name: "LAUNCHER",
-    platforms: ["WINDOWS"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "BRUTALIST LAUNCHER",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR BRUTALIST LAUNCHER. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "notes",
-    name: "NOTES",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "BRUTALIST NOTE",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR BRUTALIST NOTE. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "paint",
-    name: "PAINT",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "BRUTALIST PAINT",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR BRUTALIST PAINT. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "player",
-    name: "PLAYER",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "BRUTALIST MUSIC PLAYER",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR BRUTALIST MUSIC PLAYER. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "reader",
-    name: "READER",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "BRUTALIST READER",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR BRUTALIST READER. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   },
   {
     id: "recorder",
-    name: "RECORDER",
-    platforms: ["WINDOWS", "ANDROID"],
-    summary: "DESCRIPTION COMING SOON.",
+    name: "BRUTALIST RECORDER",
+    blurb: "PLACEHOLDER SHORT DESCRIPTION.",
+    summary: "PLACEHOLDER IN-DEPTH DESCRIPTION FOR BRUTALIST RECORDER. THIS COPY WILL BE REPLACED WITH THE FINAL APPLICATION DESCRIPTION.",
     features: [
-      "FEATURES COMING SOON."
+      "PLACEHOLDER FEATURE 01.",
+      "PLACEHOLDER FEATURE 02.",
+      "PLACEHOLDER FEATURE 03."
     ],
     media: null
   }
