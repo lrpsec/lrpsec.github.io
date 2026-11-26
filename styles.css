@@ -416,24 +416,34 @@ a.site-title:focus-visible {
 }
 
 .app-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+  container-type: inline-size;
 }
 
 .app-list li {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 0.25em;
+  min-width: 0;
   border: 3px solid var(--ink);
-  padding: 6px 10px;
-  font-size: 13px;
-  letter-spacing: 0.06em;
+  padding: 0.4em 0.15em;
+  font-size: clamp(9px, 1.7cqi, 12px);
+  letter-spacing: 0;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.app-list .app-name {
+  min-width: 0;
 }
 
 .app-icon {
-  width: 16px;
-  height: 16px;
+  width: 1.15em;
+  height: 1.15em;
   flex-shrink: 0;
   background: var(--ink);
   -webkit-mask: var(--icon) center / contain no-repeat;
@@ -581,18 +591,19 @@ footer {
   }
 
   .app-list {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: 6px;
   }
 
   .app-list li {
-    padding: 4px 7px;
-    font-size: 11px;
-    letter-spacing: 0.04em;
+    grid-column: span 3;
+    padding: 0.4em 0.1em;
+    font-size: clamp(9px, 2.7cqi, 12px);
+    letter-spacing: 0;
   }
 
-  .app-icon {
-    width: 14px;
-    height: 14px;
+  .app-list li:nth-child(n + 5) {
+    grid-column: span 4;
   }
 
   .visit,
