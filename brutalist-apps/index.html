@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BRUTALIST APPS | LRPSEC</title>
-  <meta name="description" content="A SUITE OF MINIMAL APPS FOR WINDOWS AND ANDROID BY LRPSEC. FREE AND OPEN SOURCE UNDER THE MIT LICENSE. NO ADS AND NO TRACKING.">
+  <meta name="description" content="A suite of minimal apps for Windows and Android by LRPSEC. Free and open source under the MIT license. No ads and no tracking.">
   <link rel="canonical" href="https://lrpsec.com/brutalist-apps/">
   <meta property="og:title" content="BRUTALIST APPS | LRPSEC">
-  <meta property="og:description" content="A SUITE OF MINIMAL APPS FOR WINDOWS AND ANDROID BY LRPSEC. FREE AND OPEN SOURCE UNDER THE MIT LICENSE. NO ADS AND NO TRACKING.">
+  <meta property="og:description" content="A suite of minimal apps for Windows and Android by LRPSEC. Free and open source under the MIT license. No ads and no tracking.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lrpsec.com/brutalist-apps/">
   <meta property="og:site_name" content="Brutalist Apps">
@@ -17,7 +17,7 @@
   <meta property="og:image:height" content="512">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="BRUTALIST APPS | LRPSEC">
-  <meta name="twitter:description" content="A SUITE OF MINIMAL APPS FOR WINDOWS AND ANDROID BY LRPSEC. FREE AND OPEN SOURCE UNDER THE MIT LICENSE. NO ADS AND NO TRACKING.">
+  <meta name="twitter:description" content="A suite of minimal apps for Windows and Android by LRPSEC. Free and open source under the MIT license. No ads and no tracking.">
   <meta name="twitter:image" content="https://lrpsec.com/brutalist-apps/og.png">
   <meta name="twitter:image:alt" content="Brutalist Apps">
   <meta name="theme-color" content="#FFFFFF" id="theme-color">
@@ -29,7 +29,7 @@
     "url": "https://lrpsec.com/brutalist-apps/",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Windows, Android",
-    "description": "A SUITE OF MINIMAL APPS FOR WINDOWS AND ANDROID BY LRPSEC. FREE AND OPEN SOURCE UNDER THE MIT LICENSE. NO ADS AND NO TRACKING.",
+    "description": "A suite of minimal apps for Windows and Android by LRPSEC. Free and open source under the MIT license. No ads and no tracking.",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -59,16 +59,22 @@
     })();
   </script>
 </head>
-<body>
-  <a class="skip" href="#main">SKIP TO CONTENT</a>
+<body data-i18n-page="apps">
+  <a class="skip" href="#main" data-i18n="skip">SKIP TO CONTENT</a>
   <header class="masthead">
     <div class="masthead-start">
-      <a class="site-title" href="/" title="Portfolio">LRPSEC</a>
+      <a class="site-title" href="/" title="Portfolio" data-i18n-title="portfolioHome">LRPSEC</a>
       <span class="page-title">BRUTALIST APPS</span>
     </div>
-    <button type="button" class="theme-btn glitch-target" id="theme-toggle" aria-pressed="false" aria-label="Theme">
-      <span class="glitch-fx">THEME</span>
-    </button>
+    <div class="masthead-tools">
+      <div class="lang">
+        <button type="button" class="lang-btn glitch-target" id="lang-toggle" aria-expanded="false" aria-controls="lang-menu" data-i18n-aria="language" aria-label="Language">
+          <span class="glitch-fx" id="lang-current">EN</span>
+        </button>
+        <ul class="lang-menu" id="lang-menu" hidden></ul>
+      </div>
+      <button type="button" class="theme-btn" id="theme-toggle" aria-pressed="false" data-i18n-aria="theme" aria-label="Theme"></button>
+    </div>
   </header>
   <main id="main">
     <section class="suite-hero" aria-labelledby="suite-name">
@@ -86,10 +92,10 @@
         </span>
         <div>
           <h1 class="suite-name" id="suite-name" data-glitch-title><span class="glitch glitch-load glitch-idle" data-text="BRUTALIST APPS">BRUTALIST APPS</span></h1>
-          <p class="suite-tagline">A SUITE OF MINIMAL APPS FOR DESKTOP AND MOBILE.</p>
+          <p class="suite-tagline" data-i18n="suiteTagline">A suite of minimal apps for desktop and mobile.</p>
         </div>
       </div>
-      <p class="suite-desc">FREE AND OPEN SOURCE UNDER THE MIT LICENSE. NO ADS AND NO TRACKING.</p>
+      <p class="suite-desc" data-i18n="suiteLicense">Free and open source under the MIT license. No ads and no tracking.</p>
       <div class="hero-actions">
         <div class="hero-outlinks" id="hero-outlinks"></div>
       </div>
@@ -107,7 +113,7 @@
             <span class="glitch glitch-load" id="showcase-name-text" data-text="ALARM">ALARM</span>
           </p>
           <p class="showcase-blurb">
-            <span class="glitch glitch-load" id="showcase-blurb" data-text="PLACEHOLDER SHORT DESCRIPTION.">PLACEHOLDER SHORT DESCRIPTION.</span>
+            <span class="glitch glitch-load" id="showcase-blurb" data-i18n="blurb" data-text="Placeholder short description.">Placeholder short description.</span>
           </p>
         </div>
         <div class="showcase-shot" id="showcase-shot" aria-hidden="true"></div>
@@ -115,12 +121,12 @@
     </section>
 
     <section class="apps-section" aria-labelledby="apps-title">
-      <h2 class="section-title" id="apps-title">APPS</h2>
+      <h2 class="section-title" id="apps-title" data-i18n="apps">APPS</h2>
       <div class="apps-grid" id="apps-grid"></div>
       <div class="app-panel" id="app-panel" hidden>
         <div class="panel-bar">
           <h3 class="panel-name" tabindex="-1">APP</h3>
-          <button type="button" class="panel-close glitch-target" aria-label="Close"><span class="glitch-fx">CLOSE</span></button>
+          <button type="button" class="panel-close glitch-target" data-i18n-aria="close" aria-label="CLOSE"><span class="glitch-fx" data-i18n="close">CLOSE</span></button>
         </div>
         <div class="panel-body">
           <div class="panel-info">
@@ -138,40 +144,41 @@
     </section>
 
     <section class="faq-section" aria-labelledby="faq-title">
-      <h2 class="section-title" id="faq-title">FAQ</h2>
+      <h2 class="section-title" id="faq-title" data-i18n="faq">FAQ</h2>
       <details class="faq-item">
-        <summary>QUESTION COMING SOON.</summary>
-        <p>ANSWER COMING SOON.</p>
+        <summary data-i18n="questionSoon">QUESTION COMING SOON.</summary>
+        <p data-i18n="answerSoon">Answer coming soon.</p>
       </details>
       <details class="faq-item">
-        <summary>QUESTION COMING SOON.</summary>
-        <p>ANSWER COMING SOON.</p>
+        <summary data-i18n="questionSoon">QUESTION COMING SOON.</summary>
+        <p data-i18n="answerSoon">Answer coming soon.</p>
       </details>
       <details class="faq-item">
-        <summary>QUESTION COMING SOON.</summary>
-        <p>ANSWER COMING SOON.</p>
+        <summary data-i18n="questionSoon">QUESTION COMING SOON.</summary>
+        <p data-i18n="answerSoon">Answer coming soon.</p>
       </details>
       <details class="faq-item">
-        <summary>QUESTION COMING SOON.</summary>
-        <p>ANSWER COMING SOON.</p>
+        <summary data-i18n="questionSoon">QUESTION COMING SOON.</summary>
+        <p data-i18n="answerSoon">Answer coming soon.</p>
       </details>
       <details class="faq-item">
-        <summary>QUESTION COMING SOON.</summary>
-        <p>ANSWER COMING SOON.</p>
+        <summary data-i18n="questionSoon">QUESTION COMING SOON.</summary>
+        <p data-i18n="answerSoon">Answer coming soon.</p>
       </details>
     </section>
   </main>
   <p class="made-by">
-    <a class="glitch-target" href="/"><span class="glitch-fx">BY LRPSEC</span></a>
+    <a class="glitch-target" href="/"><span class="glitch-fx"><span data-i18n="by">BY</span> LRPSEC</span></a>
   </p>
   <footer>
     <p>(C) 2026 LRPSEC</p>
-    <a class="footer-link glitch-target" href="/brutalist-apps/privacy/"><span class="glitch-fx">PRIVACY</span></a>
+    <a class="footer-link glitch-target" href="/brutalist-apps/privacy/"><span class="glitch-fx" data-i18n="privacy">PRIVACY</span></a>
     <a class="footer-mail glitch-target" href="mailto:business@lrpsec.com"><span class="glitch-fx">
       <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" d="M2.6 5.5h18.8v13H2.6z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" d="M2.6 5.5 12 13.2 21.4 5.5"/></svg>
       BUSINESS@LRPSEC.COM
     </span></a>
   </footer>
+  <script src="../i18n.js"></script>
   <script src="../theme.js"></script>
   <script src="apps.js"></script>
   <script src="showcase.js"></script>

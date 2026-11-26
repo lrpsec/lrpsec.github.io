@@ -40,7 +40,8 @@
       var item = OUTLINKS[key];
       if (!item) return;
       var live = !!(item.enabled && item.href);
-      var handle = live ? (item.handle || "") : "COMING SOON";
+      var soon = window.lrpsecT ? window.lrpsecT("comingSoon") : "COMING SOON";
+      var handle = live ? (item.handle || "") : soon;
       var inner =
         (ICONS[key] || "") +
         '<span class="link-copy"><span class="link-label">' + item.label + "</span>" +
@@ -60,7 +61,7 @@
         el.className = "hero-link";
         el.disabled = true;
         el.setAttribute("aria-disabled", "true");
-        el.setAttribute("aria-label", item.label + ", coming soon");
+        el.setAttribute("aria-label", item.label + ", " + soon);
         el.innerHTML = inner;
       }
       mount.appendChild(el);
@@ -131,7 +132,7 @@
       nameEl.setAttribute("data-text", app.name);
     }
     if (blurbEl) {
-      var blurb = app.blurb || "PLACEHOLDER SHORT DESCRIPTION.";
+      var blurb = window.lrpsecT ? window.lrpsecT("blurb") : "Placeholder short description.";
       blurbEl.textContent = blurb;
       blurbEl.setAttribute("data-text", blurb);
     }
@@ -276,24 +277,27 @@
       var fig = document.createElement("figure");
       fig.className = "shot-ph";
       var num = n < 10 ? "0" + n : String(n);
-      fig.setAttribute("aria-label", app.name + " placeholder screenshot " + num);
+      var tr = window.lrpsecT || function (key) { return key; };
+      fig.setAttribute("aria-label", tr("shotAria", { name: app.name, n: num }));
       fig.innerHTML =
-        '<span class="shot-ph-kicker">PLACEHOLDER</span>' +
-        '<span class="shot-ph-label">SCREENSHOT ' + num + "</span>" +
-        '<span class="shot-ph-theme">' + themeName() + "</span>";
+        '<span class="shot-ph-kicker">' + tr("placeholder") + "</span>" +
+        '<span class="shot-ph-label">' + tr("screenshot", { n: num }) + "</span>" +
+        '<span class="shot-ph-theme">' + tr(themeName() === "BLACK" ? "black" : "white") + "</span>";
       shots.appendChild(fig);
     }
   }
 
   function renderPanel(app) {
     panel.querySelector(".panel-name").textContent = app.name;
-    panel.querySelector(".panel-summary").textContent = app.summary;
+    var tr = window.lrpsecT || function (key, vars) {
+      return (vars && vars.name) ? key + " " + vars.name : key;
+    };
+    panel.querySelector(".panel-summary").textContent = tr("summary", { name: app.name });
     var feat = panel.querySelector(".panel-features");
     feat.innerHTML = "";
-    var lines = (app.features && app.features.length) ? app.features : ["PLACEHOLDER FEATURE."];
-    lines.forEach(function (line) {
+    ["01", "02", "03"].forEach(function (n) {
       var li = document.createElement("li");
-      li.textContent = line;
+      li.textContent = tr("feature", { n: n });
       feat.appendChild(li);
     });
     renderShots(app);
@@ -350,6 +354,13 @@
   });
 
   window.addEventListener("hashchange", applyHash);
+
+  document.documentElement.addEventListener("lrpsec-lang", function () {
+    showApp(index, false);
+    renderOutlinks();
+    var open = panel.getAttribute("data-open");
+    if (open && byId(open)) renderPanel(byId(open));
+  });
 
   var bootId = (location.hash || "").replace(/^#/, "").toLowerCase();
   if (bootId && byId(bootId)) openApp(bootId, false, false);

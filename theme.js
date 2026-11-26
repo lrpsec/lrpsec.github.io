@@ -18,9 +18,8 @@
     root.setAttribute('data-theme', theme);
     if (colorMeta) colorMeta.setAttribute('content', theme === 'BLACK' ? '#000000' : '#FFFFFF');
     if (btn) {
-      var next = theme === 'BLACK' ? 'WHITE' : 'BLACK';
       btn.setAttribute('aria-pressed', theme === 'BLACK' ? 'true' : 'false');
-      btn.setAttribute('aria-label', 'Theme ' + theme + '. Switch to ' + next);
+      btn.setAttribute('aria-label', window.lrpsecT ? window.lrpsecT('theme') : 'Theme');
     }
     if (persist) {
       try { localStorage.setItem(KEY, theme); } catch (e) {}
@@ -62,6 +61,10 @@
   }
 
   if (btn) btn.addEventListener('click', flip);
+
+  document.documentElement.addEventListener('lrpsec-lang', function () {
+    if (btn && window.lrpsecT) btn.setAttribute('aria-label', window.lrpsecT('theme'));
+  });
 
   window.setTimeout(function () {
     document.querySelectorAll('.glitch-load').forEach(function (el) {
